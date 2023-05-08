@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools", "setuptools-scm"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "RT-subtitle"
+version = "0.0.1"
+authors = [
+    {name = "k", email = "chkycc@gmail.com"},
+]
+description = "Real time subtitle generation"
+readme = "README.md"
+requires-python = ">=3.7"
+keywords = ["fastasr", "qt"]
+license = {text = "MIT"}
+classifiers = [
+    "Programming Language :: Python :: 3",
+]
+dependencies = [
+    "PyQt6",
+    "numpy",
+    "fastasr"
+]
+
+[project.scripts]
+rtsub = "rt_subtitle.__main__:run"
+
+[tool.setuptools.packages.find]
+where = ["."]
+
+[tool.setuptools.package-data]
+rt_subtitle = [ "*.ui" ]
+# mypkg = ["*.txt", "*.rst"]
+# "mypkg.data" = ["*.rst"]
+
+# [tool.setuptools.exclude-package-data]
+# mypkg = [".gitattributes"]
+
+# ... other project metadata fields as specified in:
+#     https://packaging.python.org/en/latest/specifications/declaring-project-metadata/
